@@ -1,0 +1,1 @@
+ALTER TABLE telegram_messages ADD COLUMN sequence bigint GENERATED ALWAYS AS IDENTITY;

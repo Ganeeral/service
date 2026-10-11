@@ -1,0 +1,25 @@
+{
+  "name": "service-ilyxa",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace @service-ilyxa/web",
+    "dev:api": "npm run dev --workspace @service-ilyxa/api",
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspace @service-ilyxa/web",
+    "start:api": "npm run start --workspace @service-ilyxa/api",
+    "typecheck": "npm run typecheck --workspaces",
+    "lint": "npm run lint --workspaces",
+    "db:migrate": "npm run db:migrate --workspace @service-ilyxa/api",
+    "test:api": "npm run test --workspace @service-ilyxa/api",
+    "test:proxy": "node scripts/smoke-api-proxy.mjs",
+    "test:booking": "npm run build --workspace @service-ilyxa/api && node --env-file-if-exists=apps/api/.env scripts/smoke-booking.mjs",
+    "test:smoke": "node scripts/smoke-web.mjs"
+  }
+}

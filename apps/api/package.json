@@ -1,0 +1,29 @@
+{
+  "name": "@service-ilyxa/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "dev": "node ../../scripts/dev-api.mjs",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "db:migrate": "npm run build && node --env-file-if-exists=.env dist/cli.js migrate",
+    "admin": "node --env-file-if-exists=.env dist/cli.js",
+    "test": "npm run build && node --env-file-if-exists=.env --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.1.2",
+    "@nestjs/core": "12.1.2",
+    "@nestjs/platform-express": "12.1.2",
+    "pg": "8.23.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.1",
+    "@types/pg": "8.23.1",
+    "typescript": "7.0.2"
+  }
+}

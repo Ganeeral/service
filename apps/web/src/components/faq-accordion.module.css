@@ -1,0 +1,53 @@
+.items {
+  min-width: 0;
+}
+.item {
+  border-bottom: 1px solid var(--border);
+}
+.item:first-child {
+  border-top: 1px solid var(--border);
+}
+.item h3 {
+  margin: 0;
+}
+.item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 68px;
+  padding: 16px 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 650;
+}
+.item button:hover,
+.item button[aria-expanded="true"] {
+  color: #97432f;
+}
+.toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  color: #67735e;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+}
+.answer {
+  overflow: hidden;
+}
+.answer p {
+  margin: 0;
+  padding: 0 45px 22px 0;
+  color: #67715d;
+  font-size: 12px;
+  line-height: 1.9;
+}
